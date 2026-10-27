@@ -1,42 +1,74 @@
-
 {
   "siteSettings": {
     "maintenanceMode": false,
-    "maintenanceMessage": "Sitemiz şu anda bakımdadır. Çok yakında yeni dublajlar ve sürprizlerle geri döneceğiz! ✨"
+    "maintenanceMessage": {
+      "tr": "Sitemiz şu anda bakımdadır. Çok yakında yeni dublajlar ve sürprizlerle geri döneceğiz! ✨",
+      "en": "Our website is currently under maintenance. We will be back soon with new dubbings and surprises! ✨"
+    }
   },
   "profile": {
     "name": "Miray K.",
     "handle": "@kgissydub",
     "showVerifiedBadge": true,
-    "avatarUrl": "gissy.jpeg",
-    "bio": "Merhaba, ben Miray! 🎙️💜\n\nDublaj yapmayı ve sesimle karakterlere hayat vermeyi seviyorum.\n\nEternal Production ve Yasha Records bünyesindeki projelerime göz atmak için aşağıdaki bağlantıları inceleyebilirsin! ✨"
+    "avatarUrl": "gissy.jpg",
+    "bio": {
+      "tr": "Merhaba, ben Miray! 🎙️💜\n\nDublaj yapmayı ve sesimle karakterlere hayat vermeyi seviyorum.\n\nEternal Production ve Yasha Records bünyesindeki projelerime göz atmak için aşağıdaki bağlantıları inceleyebilirsin! ✨",
+      "en": "Hello, I'm Miray! 🎙️💜\n\nI love voice acting and bringing characters to life with my voice.\n\nCheck out the links below to explore my projects under Eternal Production and Yasha Records! ✨"
+    }
   },
   "links": [
     {
       "id": "instagram",
-      "title": "Instagram",
-      "subtitle": "Günlük kesitler ve seslendirme duyuruları",
+      "title": {
+        "tr": "Instagram",
+        "en": "Instagram"
+      },
+      "subtitle": {
+        "tr": "Günlük kesitler ve seslendirme duyuruları",
+        "en": "Daily clips and voice acting announcements"
+      },
       "url": "https://instagram.com/kgissydub",
       "icon": "instagram",
-      "badge": "En popüler",
+      "badge": {
+        "tr": "En popüler",
+        "en": "Most popular"
+      },
       "color": "#E4405F"
     },
     {
       "id": "yasha",
-      "title": "Yasha Records",
-      "subtitle": "Tam Bölüm Anime Dublaj Projeleri",
+      "title": {
+        "tr": "Yasha Records",
+        "en": "Yasha Records"
+      },
+      "subtitle": {
+        "tr": "Tam Bölüm Anime Dublaj Projeleri",
+        "en": "Full Episode Anime Dubbing Projects"
+      },
       "url": "https://yasharecords.tr",
       "icon": "mic",
-      "badge": "Anime dublaj",
+      "badge": {
+        "tr": "Anime dublaj",
+        "en": "Anime dubbing"
+      },
       "color": "#8b5cf6"
     },
     {
       "id": "discord",
-      "title": "Discord Topluluğumuz",
-      "subtitle": "Toplulukla sohbet ve etkinlikler",
+      "title": {
+        "tr": "Discord Topluluğumuz",
+        "en": "Our Discord Community"
+      },
+      "subtitle": {
+        "tr": "Toplulukla sohbet ve etkinlikler",
+        "en": "Chat with community & events"
+      },
       "url": "https://discord.gg/a9sCsv2NyN",
       "icon": "discord",
-      "badge": "Topluluk",
+      "badge": {
+        "tr": "Topluluk",
+        "en": "Community"
+      },
       "color": "#5865F2"
     }
   ],
@@ -44,12 +76,18 @@
     {
       "id": 1,
       "title": "Bocchi The Rock",
-      "category": "Yasha Records - Anime BTR",
+      "category": {
+        "tr": "Yasha Records - Anime BTR",
+        "en": "Yasha Records - Anime BTR"
+      },
       "role": "Hitori Gotoh",
       "date": "2026",
       "videoUrl": "https://yasha.tr/izle?proje=bocchitherock&bolum=1",
       "thumbnail": "https://images.mubicdn.net/images/film/360545/cache-827258-1745500598/image-w1280.jpg?size=800x",
-      "description": "Yasha Records bünyesinde seslendirdiğim Bocchi The Rock animesini izle.",
+      "description": {
+        "tr": "Yasha Records bünyesinde seslendirdiğim Bocchi The Rock animesini izle.",
+        "en": "Watch Bocchi The Rock anime dubbed by me under Yasha Records."
+      },
       "tags": [
         "Anime",
         "Yasha Records",
@@ -58,12 +96,84 @@
     }
   ],
   "footer": {
-    "copyright": "© 2026 Miray. Tüm hakları saklıdır.",
+    "copyright": {
+      "tr": "© 2026 Gissy. Tüm hakları saklıdır.",
+      "en": "© 2026 Gissy. All rights reserved."
+    },
     "eternalProduction": {
       "title": "Eternal Production",
-      "tagline": "Profesyonel Seslendirme & Prodüksiyon Hizmetleri",
-      "url": "https://eternalproduction.com",
+      "tagline": {
+        "tr": "Profesyonel Seslendirme & Prodüksiyon Hizmetleri",
+        "en": "Professional Voiceover & Production Services"
+      },
+      "url": "https://eternalproduction.net",
       "logoText": "ETERNAL PRODUCTION"
+    }
+  },
+  "translations": {
+    "tr": {
+      "tabs": {
+        "links": "Bağlantılar",
+        "dubbings": "Dublajlar & Projeler"
+      },
+      "report": {
+        "title": "Kullanıcı Şikâyet Formu",
+        "subtitle": "Gissy topluluk kurallarını veya hizmet şartlarını ihlal eden kullanıcıları buradan bildirebilirsiniz.",
+        "fullName": "Ad Soyad",
+        "fullNamePlaceholder": "Adınız ve soyadınız",
+        "countryCode": "Ülke Kodu",
+        "phone": "Telefon Numarası",
+        "phonePlaceholder": "5XX XXX XX XX",
+        "reportedUser": "Şikâyet Edilen Kullanıcı",
+        "reportedUserPlaceholder": "Kullanıcı adı veya profil adresi",
+        "reason": "Şikâyet Nedeni",
+        "reasonSelect": "Şikâyet nedenini seçiniz",
+        "reasonHarassment": "Taciz veya Zorbalık",
+        "reasonSpam": "Spam veya Dolandırıcılık",
+        "reasonInappropriate": "Uygunsuz İçerik",
+        "reasonImpersonation": "Taklit / Sahte Hesap",
+        "reasonOther": "Diğer",
+        "description": "Şikâyet Açıklaması",
+        "descriptionPlaceholder": "Şikâyetiniz hakkında detaylı bilgi verin...",
+        "warning": "⚠️ Asılsız ve kasten yanlış yapılan şikâyetler hakkında yasal işlem başlatılabilir ve hesabınız erişime kapatılabilir.",
+        "confirmation": "Verdiğim bilgilerin doğru ve eksiksiz olduğunu onaylıyorum.",
+        "submit": "Şikâyeti Gönder",
+        "submitting": "Gönderiliyor...",
+        "success": "Şikâyetiniz başarıyla iletilmiştir. İnceledikten sonra tarafınıza dönüş yapılacaktır.",
+        "error": "Şikâyet gönderilirken bir hata oluştu. Lütfen tekrar deneyiniz."
+      }
+    },
+    "en": {
+      "tabs": {
+        "links": "Links",
+        "dubbings": "Dubbings & Projects"
+      },
+      "report": {
+        "title": "User Complaint Form",
+        "subtitle": "You can report users who violate Gissy community guidelines or terms of service here.",
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "Your full name",
+        "countryCode": "Country Code",
+        "phone": "Phone Number",
+        "phonePlaceholder": "5XX XXX XX XX",
+        "reportedUser": "Reported User",
+        "reportedUserPlaceholder": "Username or profile link",
+        "reason": "Complaint Reason",
+        "reasonSelect": "Select complaint reason",
+        "reasonHarassment": "Harassment or Bullying",
+        "reasonSpam": "Spam or Scam",
+        "reasonInappropriate": "Inappropriate Content",
+        "reasonImpersonation": "Impersonation / Fake Account",
+        "reasonOther": "Other",
+        "description": "Complaint Description",
+        "descriptionPlaceholder": "Provide detailed information about your complaint...",
+        "warning": "⚠️ Unfounded and intentionally false complaints may result in legal action and account suspension.",
+        "confirmation": "I confirm that the information provided is accurate and complete.",
+        "submit": "Submit Complaint",
+        "submitting": "Submitting...",
+        "success": "Your complaint has been submitted successfully. We will review it and get back to you.",
+        "error": "An error occurred while submitting the complaint. Please try again."
+      }
     }
   }
 }
