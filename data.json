@@ -1,4 +1,13 @@
 {
+  "background": {
+    "imageUrl": "https://images.mubicdn.net/images/film/360545/cache-827258-1745500598/image-w1280.jpg?size=800x",
+    "blur": 20,
+    "overlayOpacity": 35,
+    "enabled": true,
+    "position": "center",
+    "size": "cover",
+    "repeat": "no-repeat"
+  },
   "siteSettings": {
     "maintenanceMode": false,
     "maintenanceMessage": {
