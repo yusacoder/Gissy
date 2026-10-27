@@ -3,14 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miray - Dublaj & Portfolyo</title>
+  <title>Gissy - Eternal Production</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+  <!-- Üst Navbar -->
+  <header class="top-navbar">
+    <div class="top-navbar-container">
+      <div class="lang-switch-wrapper">
+        <button id="lang-tr-btn" class="lang-btn active" onclick="switchLanguage('tr')">TR</button>
+        <span class="lang-divider">|</span>
+        <button id="lang-en-btn" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+      </div>
+      <div class="brand-logo-wrapper">
+        <a href="/" class="brand-logo" onclick="navigateTo(event, getHomeRoute())">GISSY</a>
+      </div>
+      <div class="top-navbar-right"></div>
+    </div>
+  </header>
 
   <!-- Bakım Modu Ekranı -->
   <div id="maintenance-screen" class="maintenance-screen hidden">
@@ -18,7 +34,7 @@
       <div class="maintenance-icon">
         <i class="fa-solid fa-wrench"></i>
       </div>
-      <h2>Bakımdayız</h2>
+      <h2 id="maintenance-title">Bakımdayız</h2>
       <p id="maintenance-msg">Sitemiz şu anda bakımdadır. Çok yakında yeni dublajlar ve sürprizlerle geri döneceğiz! ✨</p>
       <div class="maintenance-footer">
         <span class="purple-badge">Eternal Production</span>
@@ -26,88 +42,194 @@
     </div>
   </div>
 
-  <!-- Ana İçerik Konteyneri -->
-  <div id="app-container" class="app-container">
+  <!-- Main View Container -->
+  <div class="main-view-container">
 
-    <!-- Üst Başlık & Profil Alanı -->
-    <header class="profile-header">
-      <div class="avatar-wrapper">
-        <img id="profile-avatar" src="" alt="Miray Avatar" class="profile-avatar">
-        <div class="avatar-glow"></div>
-      </div>
+    <!-- Ana Sayfa (Profil + Sekmeler) View -->
+    <div id="page-home" class="page-view">
+      <div class="app-container">
 
-      <div class="profile-info">
-        <div class="name-badge-wrapper">
-          <h1 id="profile-name" class="profile-name">Miray</h1>
-          <span id="verified-badge" class="verified-badge hidden" title="Onaylanmış Seslendirme Sanatçısı">
-            <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.79-3.99-4-3.99-.495 0-.965.084-1.4.238C14.55 2.475 13.18 1.6 11.6 1.6c-1.58 0-2.95.875-3.6 2.148-.435-.154-.905-.238-1.4-.238-2.21 0-3.99 1.78-3.99 4 0 .495.084.965.238 1.4C1.575 9.55.7 10.92.7 12.5c0 1.58.875 2.95 2.148 3.6-.154.435-.238.905-.238 1.4 0 2.21 1.79 3.99 4 3.99.495 0 .965-.084 1.4-.238 1.05 1.273 2.42 2.148 4 2.148 1.58 0 2.95-.875 3.6-2.148.435.154.905.238 1.4.238 2.21 0 3.99-1.78 3.99-4 0-.495-.084-.965-.238-1.4 1.273-1.05 2.148-2.42 2.148-4zM10.09 16.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/>
-            </svg>
-          </span>
+        <!-- Üst Başlık & Profil Alanı -->
+        <header class="profile-header">
+          <div class="avatar-wrapper">
+            <img id="profile-avatar" src="gissy.jpg" alt="Gissy Avatar" class="profile-avatar">
+            <div class="avatar-glow"></div>
+          </div>
+
+          <div class="profile-info">
+            <div class="name-badge-wrapper">
+              <h1 id="profile-name" class="profile-name">Miray K.</h1>
+              <span id="verified-badge" class="verified-badge hidden" title="Onaylanmış Seslendirme Sanatçısı">
+                <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.79-3.99-4-3.99-.495 0-.965.084-1.4.238C14.55 2.475 13.18 1.6 11.6 1.6c-1.58 0-2.95.875-3.6 2.148-.435-.154-.905-.238-1.4-.238-2.21 0-3.99 1.78-3.99 4 0 .495.084.965.238 1.4C1.575 9.55.7 10.92.7 12.5c0 1.58.875 2.95 2.148 3.6-.154.435-.238.905-.238 1.4 0 2.21 1.79 3.99 4 3.99.495 0 .965-.084 1.4-.238 1.05 1.273 2.42 2.148 4 2.148 1.58 0 2.95-.875 3.6-2.148.435.154.905.238 1.4.238 2.21 0 3.99-1.78 3.99-4 0-.495-.084-.965-.238-1.4 1.273-1.05 2.148-2.42 2.148-4zM10.09 16.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/>
+                </svg>
+              </span>
+            </div>
+            <p id="profile-handle" class="profile-handle">@kgissydub</p>
+
+            <!-- Tanıtım & Açıklama -->
+            <div id="profile-bio" class="profile-bio">
+              <!-- Bio JS ile data.json'dan yüklenecek -->
+            </div>
+          </div>
+        </header>
+
+        <!-- Sekme Navigasyonu -->
+        <nav class="nav-tabs">
+          <button id="tab-links-btn" class="tab-btn active" onclick="switchTab('links')">
+            <i class="fa-solid fa-link"></i> <span id="label-tab-links">Bağlantılar</span>
+          </button>
+          <button id="tab-dubbings-btn" class="tab-btn" onclick="switchTab('dubbings')">
+            <i class="fa-solid fa-microphone-lines"></i> <span id="label-tab-dubbings">Dublajlar & Projeler</span>
+          </button>
+        </nav>
+
+        <!-- Sekme 1: Bağlantılar -->
+        <main id="tab-links" class="tab-content active">
+          <div id="links-container" class="links-list">
+            <!-- Bağlantı kartları JS ile dinamik gelecek -->
+          </div>
+        </main>
+
+        <!-- Sekme 2: Dublajlar -->
+        <main id="tab-dubbings" class="tab-content hidden">
+          <div id="dubbings-container" class="dubbings-grid">
+            <!-- Dublaj kartları JS ile dinamik gelecek -->
+          </div>
+        </main>
+
+        <!-- Video Modal Popup -->
+        <div id="video-modal" class="video-modal hidden" onclick="closeModal(event)">
+          <div class="modal-content">
+            <button class="modal-close" onclick="closeModalDirect()">&times;</button>
+            <div class="iframe-container">
+              <iframe id="modal-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="modal-info">
+              <h3 id="modal-title"></h3>
+              <p id="modal-desc"></p>
+            </div>
+          </div>
         </div>
-        <p id="profile-handle" class="profile-handle">@miraydubbing</p>
 
-        <!-- Tanıtım & Açıklama -->
-        <div id="profile-bio" class="profile-bio">
-          <!-- Bio JS ile data.json'dan yüklenecek -->
-        </div>
-      </div>
-    </header>
+        <!-- Footer / Alt Bilgi -->
+        <footer class="site-footer">
+          <div class="footer-bottom">
+            <p id="footer-copyright">© 2026 Gissy. Tüm hakları saklıdır.</p>
+            <p class="footer-subtext">
+              Powered by
+              <a href="https://eternalproduction.net" target="_blank" rel="noopener noreferrer">
+                Eternal Production
+              </a>
+            </p>
+          </div>
+        </footer>
 
-    <!-- Sekme Navigasyonu -->
-    <nav class="nav-tabs">
-      <button id="tab-links-btn" class="tab-btn active" onclick="switchTab('links')">
-        <i class="fa-solid fa-link"></i> Bağlantılar
-      </button>
-      <button id="tab-dubbings-btn" class="tab-btn" onclick="switchTab('dubbings')">
-        <i class="fa-solid fa-microphone-lines"></i> Dublajlar & Projeler
-      </button>
-    </nav>
-
-    <!-- Sekme 1: Bağlantılar -->
-    <main id="tab-links" class="tab-content active">
-      <div id="links-container" class="links-list">
-        <!-- Bağlantı kartları JS ile dinamik gelecek -->
-      </div>
-    </main>
-
-    <!-- Sekme 2: Dublajlar -->
-    <main id="tab-dubbings" class="tab-content hidden">
-      <div id="dubbings-container" class="dubbings-grid">
-        <!-- Dublaj kartları JS ile dinamik gelecek -->
-      </div>
-    </main>
-
-    <!-- Video Modal Popup -->
-    <div id="video-modal" class="video-modal hidden" onclick="closeModal(event)">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeModalDirect()">&times;</button>
-        <div class="iframe-container">
-          <iframe id="modal-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="modal-info">
-          <h3 id="modal-title"></h3>
-          <p id="modal-desc"></p>
-        </div>
       </div>
     </div>
-<!-- Footer / Alt Bilgi -->
-<footer class="site-footer">
-  <div class="footer-bottom">
-    <p id="footer-copyright">© 2026 Gissy. Tüm hakları saklıdır.</p>
-    <p class="footer-subtext">
-      Powered by
-      <a href="https://eternalproduction.net"
-         target="_blank"
-         rel="noopener noreferrer">
-        Eternal Production
+
+    <!-- Şikâyet Sayfası View -->
+    <div id="page-report" class="page-view hidden">
+      <div class="app-container">
+        <div class="report-card">
+          <div class="report-header">
+            <div class="report-icon-box">
+              <i data-lucide="flag" class="report-header-icon"></i>
+            </div>
+            <h2 id="report-title">Kullanıcı Şikâyet Formu</h2>
+            <p id="report-subtitle">Gissy topluluk kurallarını veya hizmet şartlarını ihlal eden kullanıcıları buradan bildirebilirsiniz.</p>
+          </div>
+
+          <form id="complaint-form" onsubmit="handleFormSubmit(event)" novalidate>
+            <div class="form-group">
+              <label for="fullName" id="label-fullName">Ad Soyad <span class="required-star">*</span></label>
+              <input type="text" id="fullName" name="fullName" class="form-input" required placeholder="Adınız ve soyadınız">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group country-code-group">
+                <label for="countryCode" id="label-countryCode">Ülke Kodu <span class="required-star">*</span></label>
+                <input type="text" id="countryCode" name="countryCode" class="form-input" value="+90" required>
+              </div>
+              <div class="form-group phone-group">
+                <label for="phoneNumber" id="label-phoneNumber">Telefon Numarası <span class="required-star">*</span></label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required placeholder="5XX XXX XX XX">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="reportedUser" id="label-reportedUser">Şikâyet Edilen Kullanıcı <span class="required-star">*</span></label>
+              <input type="text" id="reportedUser" name="reportedUser" class="form-input" required placeholder="Kullanıcı adı veya profil adresi">
+            </div>
+
+            <div class="form-group">
+              <label for="complaintReason" id="label-reason">Şikâyet Nedeni <span class="required-star">*</span></label>
+              <select id="complaintReason" name="complaintReason" class="form-input" required>
+                <option value="" disabled selected id="opt-reasonSelect">Şikâyet nedenini seçiniz</option>
+                <option value="Taciz veya Zorbalık" id="opt-reasonHarassment">Taciz veya Zorbalık</option>
+                <option value="Spam veya Dolandırıcılık" id="opt-reasonSpam">Spam veya Dolandırıcılık</option>
+                <option value="Uygunsuz İçerik" id="opt-reasonInappropriate">Uygunsuz İçerik</option>
+                <option value="Taklit / Sahte Hesap" id="opt-reasonImpersonation">Taklit / Sahte Hesap</option>
+                <option value="Diğer" id="opt-reasonOther">Diğer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="complaintDescription" id="label-description">Şikâyet Açıklaması <span class="required-star">*</span></label>
+              <textarea id="complaintDescription" name="complaintDescription" class="form-input" rows="4" required placeholder="Şikâyetiniz hakkında detaylı bilgi verin..."></textarea>
+            </div>
+
+            <div class="warning-box">
+              <p id="report-warning">⚠️ Asılsız ve kasten yanlış yapılan şikâyetler hakkında yasal işlem başlatılabilir ve hesabınız erişime kapatılabilir.</p>
+            </div>
+
+            <div class="form-checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="accuracyConfirmation" name="accuracyConfirmation" required>
+                <span id="label-confirmation">Verdiğim bilgilerin doğru ve eksiksiz olduğunu onaylıyorum.</span>
+              </label>
+            </div>
+
+            <div id="form-message" class="form-message hidden"></div>
+
+            <button type="submit" id="submit-btn" class="submit-btn">
+              <span id="submit-btn-text">Şikâyeti Gönder</span>
+              <span id="submit-btn-spinner" class="spinner hidden"></span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Footer / Alt Bilgi -->
+        <footer class="site-footer">
+          <div class="footer-bottom">
+            <p id="footer-copyright-report">© 2026 Gissy. Tüm hakları saklıdır.</p>
+            <p class="footer-subtext">
+              Powered by
+              <a href="https://eternalproduction.net" target="_blank" rel="noopener noreferrer">
+                Eternal Production
+              </a>
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Alt iOS Tarzı Saydam Navbar -->
+  <nav class="bottom-navbar">
+    <div class="bottom-navbar-container">
+      <a href="/" id="nav-item-home" class="bottom-nav-item active" onclick="navigateTo(event, getHomeRoute())">
+        <i data-lucide="house" class="bottom-nav-icon"></i>
+        <span id="bottom-label-home" class="bottom-nav-label">Ana Menü</span>
       </a>
-    </p>
-  </div>
-</footer>
+      <a href="/sikayet" id="nav-item-report" class="bottom-nav-item" onclick="navigateTo(event, getReportRoute())">
+        <i data-lucide="flag" class="bottom-nav-icon"></i>
+        <span id="bottom-label-report" class="bottom-nav-label">Şikâyet</span>
+      </a>
+    </div>
+  </nav>
 
-  </div>
-
-  <script src="app.js"></script>
+  <script src="/app.js"></script>
 </body>
 </html>
