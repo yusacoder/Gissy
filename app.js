@@ -130,8 +130,93 @@ function updateLanguageUI() {
   }
 }
 
+function applyBackground(bgConfig) {
+  const defaults = {
+    imageUrl: '',
+    blur: 20,
+    overlayOpacity: 35,
+    enabled: true,
+    position: 'center',
+    size: 'cover',
+    repeat: 'no-repeat'
+  };
+
+  const config = Object.assign({}, defaults, bgConfig || {});
+
+  // Validate blur (1 - 100)
+  let blurVal = Number(config.blur);
+  if (isNaN(blurVal)) blurVal = defaults.blur;
+  else if (blurVal < 1) blurVal = 1;
+  else if (blurVal > 100) blurVal = 100;
+
+  // Linear mapping: 1-100 mapped to 0-30px (e.g., blurVal / 100 * 30)
+  const blurPx = (blurVal / 100) * 30;
+
+  // Validate overlayOpacity (0 - 100)
+  let opacityVal = Number(config.overlayOpacity);
+  if (isNaN(opacityVal)) opacityVal = defaults.overlayOpacity;
+  else if (opacityVal < 0) opacityVal = 0;
+  else if (opacityVal > 100) opacityVal = 100;
+
+  const overlayAlpha = opacityVal / 100;
+
+  // Ensure DOM container elements exist
+  let container = document.getElementById('bg-layer-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'bg-layer-container';
+    container.className = 'bg-layer-container';
+    container.innerHTML = `
+      <div id="bg-layer-image" class="bg-layer-image"></div>
+      <div id="bg-layer-overlay" class="bg-layer-overlay"></div>
+    `;
+    document.body.prepend(container);
+  }
+
+  const bgImageElem = document.getElementById('bg-layer-image');
+  const bgOverlayElem = document.getElementById('bg-layer-overlay');
+
+  if (bgOverlayElem) {
+    bgOverlayElem.style.opacity = overlayAlpha;
+  }
+
+  if (bgImageElem) {
+    bgImageElem.style.filter = `blur(${blurPx}px)`;
+    bgImageElem.style.backgroundPosition = config.position || 'center';
+    bgImageElem.style.backgroundSize = config.size || 'cover';
+    bgImageElem.style.backgroundRepeat = config.repeat || 'no-repeat';
+  }
+
+  const isEnabled = config.enabled !== false;
+  const imageUrl = typeof config.imageUrl === 'string' ? config.imageUrl.trim() : '';
+
+  if (isEnabled && imageUrl) {
+    const img = new Image();
+    img.onload = () => {
+      if (bgImageElem) {
+        bgImageElem.style.backgroundImage = `url("${imageUrl}")`;
+        bgImageElem.style.opacity = '1';
+      }
+    };
+    img.onerror = () => {
+      if (bgImageElem) {
+        bgImageElem.style.backgroundImage = 'none';
+        bgImageElem.style.opacity = '0';
+      }
+    };
+    img.src = imageUrl;
+  } else {
+    if (bgImageElem) {
+      bgImageElem.style.backgroundImage = 'none';
+      bgImageElem.style.opacity = '0';
+    }
+  }
+}
+
 function renderSite() {
   if (!siteData) return;
+
+  applyBackground(siteData.background);
 
   const t = (siteData.translations && siteData.translations[currentLang]) ? siteData.translations[currentLang] : null;
 
