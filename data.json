@@ -39,8 +39,8 @@
       "url": "https://instagram.com/kgissydub",
       "icon": "instagram",
       "badge": {
-        "tr": "En popüler",
-        "en": "Most popular"
+        "tr": "",
+        "en": ""
       },
       "color": "#E4405F"
     },
@@ -57,8 +57,8 @@
       "url": "https://yasharecords.tr",
       "icon": "mic",
       "badge": {
-        "tr": "Anime dublaj",
-        "en": "Anime dubbing"
+        "tr": "",
+        "en": ""
       },
       "color": "#8b5cf6"
     },
@@ -75,8 +75,8 @@
       "url": "https://discord.gg/a9sCsv2NyN",
       "icon": "discord",
       "badge": {
-        "tr": "Topluluk",
-        "en": "Community"
+        "tr": "",
+        "en": ""
       },
       "color": "#5865F2"
     }
