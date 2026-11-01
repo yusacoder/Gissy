@@ -1,3 +1,4 @@
+
 {
   "background": {
     "imageUrl": "https://images.mubicdn.net/images/film/360545/cache-827258-1745500598/image-w1280.jpg?size=800x",
@@ -45,22 +46,22 @@
       "color": "#E4405F"
     },
     {
-      "id": "yasha",
+      "id": "tiktok",
       "title": {
-        "tr": "Yasha Records",
-        "en": "Yasha Records"
+        "tr": "TikTok",
+        "en": "TikTok"
       },
       "subtitle": {
-        "tr": "Tam Bölüm Anime Dublaj Projeleri",
-        "en": "Full Episode Anime Dubbing Projects"
+        "tr": "TikTok videolarım ve seslendirme içeriklerim",
+        "en": "My TikTok videos and voice acting content"
       },
-      "url": "https://yasharecords.tr",
-      "icon": "mic",
+      "url": "https://www.tiktok.com/@kgissydub",
+      "icon": "music-2",
       "badge": {
         "tr": "",
         "en": ""
       },
-      "color": "#8b5cf6"
+      "color": "#000000"
     },
     {
       "id": "discord",
@@ -86,20 +87,20 @@
       "id": 1,
       "title": "Bocchi The Rock",
       "category": {
-        "tr": "Yasha Records - Anime BTR",
-        "en": "Yasha Records - Anime BTR"
+        "tr": "Anime Dublaj Projesi",
+        "en": "Anime Dubbing Project"
       },
       "role": "Hitori Gotoh",
       "date": "2026",
       "videoUrl": "https://yasha.tr/izle?proje=bocchitherock&bolum=1",
       "thumbnail": "https://images.mubicdn.net/images/film/360545/cache-827258-1745500598/image-w1280.jpg?size=800x",
       "description": {
-        "tr": "Yasha Records bünyesinde seslendirdiğim Bocchi The Rock animesini izle.",
-        "en": "Watch Bocchi The Rock anime dubbed by me under Yasha Records."
+        "tr": "Bocchi The Rock anime dublaj projesini izle.",
+        "en": "Watch the Bocchi The Rock anime dubbing project."
       },
       "tags": [
         "Anime",
-        "Yasha Records",
+        "Dublaj",
         "Müzik"
       ]
     }
